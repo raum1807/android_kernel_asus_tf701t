@@ -18,7 +18,7 @@
 
 #include <linux/edp.h>
 
-#if defined(CONFIG_BCM43XX_EDP_SUPPORT) || defined(CONFIG_BCMDHD_EDP_SUPPORT)
+#if defined(CONFIG_BCM43XX_EDP_SUPPORT)
 typedef enum e_edp_state {
 	EDP_STATE_ON = 0,
 	EDP_STATE_OFF
@@ -32,7 +32,7 @@ struct wifi_platform_data {
 	void *(*mem_prealloc)(int section, unsigned long size);
 	int (*get_mac_addr)(unsigned char *buf);
 	void *(*get_country_code)(char *ccode);
-#if defined(CONFIG_BCM43XX_EDP_SUPPORT) || defined(CONFIG_BCMDHD_EDP_SUPPORT)
+#if defined(CONFIG_BCM43XX_EDP_SUPPORT)
 	struct edp_client client_info;
 #endif
 };

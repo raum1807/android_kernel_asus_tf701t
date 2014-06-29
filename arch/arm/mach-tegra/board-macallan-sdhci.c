@@ -42,7 +42,7 @@
 #define MACALLAN_WLAN_RST	TEGRA_GPIO_PX7
 #define MACALLAN_WLAN_WOW	TEGRA_GPIO_PU5
 #define MACALLAN_EN_3V3_COM	TEGRA_GPIO_PU1
-#if defined(CONFIG_BCM43XX_EDP_SUPPORT) || defined(CONFIG_BCMDHD_EDP_SUPPORT)
+#if defined(CONFIG_BCM43XX_EDP_SUPPORT)
 /* Wifi power levels */
 #define ON  1050 /* 1050 mW */
 #define OFF 0
@@ -63,7 +63,7 @@ static struct wifi_platform_data macallan_wifi_control = {
 	.set_power = macallan_wifi_power,
 	.set_reset = macallan_wifi_reset,
 	.set_carddetect = macallan_wifi_set_carddetect,
-#if defined(CONFIG_BCM43XX_EDP_SUPPORT) || defined(CONFIG_BCMDHD_EDP_SUPPORT)
+#if defined(CONFIG_BCM43XX_EDP_SUPPORT)
 	/* set the wifi edp client information here */
 	.client_info    = {
 		.name       = "wifi_edp_client",
